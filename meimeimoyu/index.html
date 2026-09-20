@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="妹妹魔域 - 沉浸式二次元冒险游戏攻略与玩家社区。提供角色养成、副本通关技巧、装备搭配指南及最新版本更新资讯。">
+    <meta name="keywords" content="妹妹魔域,二次元手游,冒险游戏,角色扮演,游戏攻略">
+    <title>妹妹魔域-沉浸式二次元冒险与角色养成指南</title>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --bg-color: #1e1e2e;
+            --card-bg: #2d2d42;
+            --text-main: #ffffff;
+            --text-sub: #b2bec3;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-sub);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-login {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: radial-gradient(circle at top right, rgba(108, 92, 231, 0.2), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(253, 121, 168, 0.1), transparent 40%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #5649c0;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 60px 0;
+            background: var(--bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Character Section */
+        .characters {
+            padding: 80px 0;
+            background: #252538;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .char-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .char-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .char-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: #333;
+        }
+
+        .char-info {
+            padding: 20px;
+        }
+
+        .char-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .char-rank {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(253, 121, 168, 0.2);
+            color: var(--accent-color);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .char-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .char-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            color: var(--text-sub);
+        }
+
+        /* Latest Updates / News */
+        .news {
+            padding: 60px 0;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .news-item:hover {
+            background: #323248;
+        }
+
+        .news-date {
+            padding: 20px;
+            background: rgba(108, 92, 231, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .news-date .day {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+        }
+
+        .news-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .news-excerpt {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            align-self: flex-start;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+
+        .rank-num.top {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background: #252538;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background: #151520;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-date {
+                flex-direction: row;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .news-date .day {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>妹妹</span>魔域
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#characters">角色图鉴</a></li>
+                    <li><a href="#guide">游戏攻略</a></li>
+                    <li><a href="#community">玩家社区</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-login">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>踏入神秘魔域，邂逅你的专属伙伴</h1>
+                <p>在充满魔法与羁绊的幻想世界中，通过策略与养成，建立属于你们的冒险传说。</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">开始冒险</button>
+                    <button class="btn-secondary">观看演示</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">游戏特色</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🧩</div>
+                        <h3>策略羁绊</h3>
+                        <p>不同角色之间存在独特的羁绊系统，合理搭配阵容可触发强力合体技能。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>实时战斗</h3>
+                        <p>抛弃枯燥的回合制，采用实时操作战斗，考验玩家的反应与微操技巧。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>精美立绘</h3>
+                        <p>由知名画师团队打造的高清二次元角色立绘，每一帧都值得收藏。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>开放地图</h3>
+                        <p>探索广阔的魔域大陆，解锁隐藏副本与稀有掉落，发现未知的秘密。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="characters">
+            <div class="container">
+                <h2 class="section-title">人气角色</h2>
+                <div class="character-grid">
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/sister1/400/500" alt="圣域守护者" class="char-img">
+                        <div class="char-info">
+                            <h3 class="char-name">圣域守护者</h3>
+                            <span class="char-rank">SSR</span>
+                            <p class="char-desc">拥有净化魔气的神力，性格高冷但内心温柔，是队伍中的核心防御者。</p>
+                            <div class="char-tags">
+                                <span class="tag">辅助</span>
+                                <span class="tag">治疗</span>
+                                <span class="tag">防御</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/sister2/400/500" alt="暗夜刺客" class="char-img">
+                        <div class="char-info">
+                            <h3 class="char-name">暗夜刺客</h3>
+                            <span class="char-rank">SR</span>
+                            <p class="char-desc">来自幽暗森林的精灵，擅长隐身与暴击，是输出爆发的首选。</p>
+                            <div class="char-tags">
+                                <span class="tag">刺客</span>
+                                <span class="tag">爆发</span>
+                                <span class="tag">隐身</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/sister3/400/500" alt="元素法师" class="char-img">
+                        <div class="char-info">
+                            <h3 class="char-name">元素法师</h3>
+                            <span class="char-rank">SR</span>
+                            <p class="char-desc">操控冰火雷电的魔女，能够改变战场环境，对敌人造成范围伤害。</p>
+                            <div class="char-tags">
+                                <span class="tag">法师</span>
+                                <span class="tag">AOE</span>
+                                <span class="tag">控制</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/sister4/400/500" alt="狂战士" class="char-img">
+                        <div class="char-info">
+                            <h3 class="char-name">狂战士</h3>
+                            <span class="char-rank">R</span>
+                            <p class="char-desc">失去理智的战士，血量越低攻击力越高，是残局翻盘的关键。</p>
+                            <div class="char-tags">
+                                <span class="tag">近战</span>
+                                <span class="tag">输出</span>
+                                <span class="tag">生存</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Guide Section -->
+        <section id="guide" class="news">
+            <div class="container">
+                <h2 class="section-title">最新资讯</h2>
+                <div class="news-container">
+                    <div class="news-list">
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="day">15</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h3 class="news-title">【版本更新】魔域深处副本开启，新角色“影舞者”登场</h3>
+                                <p class="news-excerpt">全新深渊副本上线，难度大幅提升，掉落稀有装备与限定皮肤。新角色“影舞者”加入阵营，带来全新的战斗体验。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="day">12</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h3 class="news-title">新手指南：如何快速提升角色等级与战斗力</h3>
+                                <p class="news-excerpt">针对刚入坑的玩家，我们整理了一份详细的升级路线图，包括日常任务、主线推进以及资源获取的技巧。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="day">08</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h3 class="news-title">PVP竞技场：S3赛季排名奖励公布</h3>
+                                <p class="news-excerpt">S3赛季即将结束，根据目前的排名情况，官方公布了最终的赛季奖励，包括限定称号和大量钻石。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                    <aside>
+                        <div class="sidebar-box">
+                            <h3 class="sidebar-title">热门排行榜</h3>
+                            <ul class="rank-list">
+                                <li>
+                                    <div style="display:flex; align-items:center;">
+                                        <span class="rank-num top">1</span>
+                                        <span>深渊魔王</span>
+                                    </div>
+                                    <span style="color:var(--accent-color)">98.5%</span>
+                                </li>
+                                <li>
+                                    <div style="display:flex; align-items:center;">
+                                        <span class="rank-num top">2</span>
+                                        <span>暗夜刺客</span>
+                                    </div>
+                                    <span style="color:var(--accent-color)">95.2%</span>
+                                </li>
+                                <li>
+                                    <div style="display:flex; align-items:center;">
+                                        <span class="rank-num top">3</span>
+                                        <span>圣域守护者</span>
+                                    </div>
+                                    <span style="color:var(--accent-color)">92.1%</span>
+                                </li>
+                                <li>
+                                    <div style="display:flex; align-items:center;">
+                                        <span class="rank-num">4</span>
+                                        <span>元素法师</span>
+                                    </div>
+                                    <span style="color:var(--text-sub)">88.4%</span>
+                                </li>
+                                <li>
+                                    <div style="display:flex; align-items:center;">
+                                        <span class="rank-num">5</span>
+                                        <span>狂战士</span>
+                                    </div>
+                                    <span style="color:var(--text-sub)">85.0%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-box">
+                            <h3 class="sidebar-title">热门攻略</h3>
+                            <ul class="rank-list">
+                                <li><a href="#">BOSS机制详解</a></li>
+                                <li><a href="#">资源获取途径</a></li>
+                                <li><a href="#">PVP阵容推荐</a></li>
+                                <li><a href="#">隐藏彩蛋位置</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-question">游戏需要付费吗？</div>
+                    <div class="faq-answer">游戏采用免费游玩模式，包含内购项目。玩家可以通过完成日常任务和活动免费获取大部分游戏资源，不付费也能体验完整内容。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持跨平台数据互通吗？</div>
+                    <div class="faq-answer">目前支持iOS与安卓平台的数据互通。您可以在不同设备上登录，并同步您的角色进度、装备和好友列表。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何提升角色战力？</div>
+                    <div class="faq-answer">提升战力的主要途径包括：升级角色等级、强化装备、镶嵌宝石、激活羁绊技能以及提升角色星级。建议优先强化核心输出角色的装备。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">服务器稳定吗？</div>
+                    <div class="faq-answer">我们使用多节点分布式服务器架构，保障全天候低延迟连接。如遇服务器维护，官方会提前发布公告通知。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于妹妹魔域</h4>
+                    <p style="color:var(--text-sub); font-size:0.9rem;">致力于为玩家提供最优质的二次元冒险体验，打造沉浸式的虚拟社交与战斗环境。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">新手教程</a></li>
+                        <li><a href="#">充值中心</a></li>
+                        <li><a href="#">客服支持</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>玩家社区</h4>
+                    <ul>
+                        <li><a href="#">官方论坛</a></li>
+                        <li><a href="#">玩家交流群</a></li>
+                        <li><a href="#">活动公告</a></li>
+                        <li><a href="#">反馈建议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">B站官方号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 妹妹魔域运营团队 版权所有 | 仅供展示使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠效果
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(30, 30, 46, 0.98)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            } else {
+                header.style.background = 'rgba(30, 30, 46, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                              </html>
