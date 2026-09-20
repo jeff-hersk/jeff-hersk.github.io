@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="开火车游戏在线玩 - 介绍经典接龙规则、积分策略与多人聚会玩法，提供规则详解、游戏技巧及休闲益智推荐。">
+    <meta name="keywords" content="开火车游戏, 接龙游戏, 益智游戏, 纸牌游戏, 聚会游戏">
+    <title>开火车游戏-经典接龙规则与多人益智玩法指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background-color: #d35400;
+        }
+
+        /* 通用板块样式 */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* 规则介绍 */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .rule-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .rule-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rule-card ul {
+            padding-left: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .rule-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 玩法技巧 */
+        .tips-section {
+            background-color: #eef2f5;
+            padding: 3rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .tips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .tips-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tips-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background-color: #cbd5e0;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-size: 3rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%23a0aec0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tips-list {
+            margin-top: 1.5rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tips-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* 游戏分类 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cat-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .cat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #fafafa;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🚂</span> 开火车游戏
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#rules">游戏规则</a></li>
+                    <li><a href="#tips">技巧策略</a></li>
+                    <li><a href="#categories">分类玩法</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>经典“开火车”益智游戏</h1>
+                <p>不仅是纸牌接龙，更是考验记忆与逻辑的聚会神器。无需复杂道具，随时随地开动你的思维列车。</p>
+                <a href="#rules" class="cta-button">了解规则与玩法</a>
+            </div>
+        </section>
+
+        <!-- 核心规则 -->
+        <section id="rules" class="container">
+            <h2 class="section-title">游戏基本规则</h2>
+            <div class="rules-grid">
+                <article class="rule-card">
+                    <h3>🚂 游戏目标</h3>
+                    <p>游戏的目标是尽可能快地将手中的牌出完，成为最后剩下的玩家或获得最高积分。</p>
+                </article>
+                <article class="rule-card">
+                    <h3>📦 牌型与接龙</h3>
+                    <ul>
+                        <li><strong>单张：</strong> 玩家可以出任意一张牌。</li>
+                        <li><strong>顺子：</strong> 连续三张或以上的数字牌（如 3,4,5）。</li>
+                        <li><strong>同花顺：</strong> 花色相同且数字连续的牌组（如 ♠3, ♠4, ♠5）。</li>
+                        <li><strong>炸弹：</strong> 四张相同点数的牌，可炸掉对方的一组顺子或同花顺。</li>
+                    </ul>
+                </article>
+                <article class="rule-card">
+                    <h3>🚧 行动机制</h3>
+                    <p>当一名玩家出牌后，下一位玩家必须出一张比上一位大或结构相同的牌。如果无法出牌，必须“挂火车”（将牌扣在牌堆上），直到有人能接上为止。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 技巧策略 -->
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <h2 class="section-title">进阶技巧与策略</h2>
+                <div class="tips-container">
+                    <div class="tips-image"></div>
+                    <div class="tips-content">
+                        <h3>如何成为“火车头”？</h3>
+                        <p>在多人聚会中，掌握节奏是关键。不要急于出大牌，保留炸弹作为绝杀手段。</p>
+                        <ul class="tips-list">
+                            <li><strong>观察牌堆：</strong> 记住已经打出的牌，避免重复出牌导致被动。</li>
+                            <li><strong>控制节奏：</strong> 适时打出小牌，控制游戏速度，让其他玩家处于紧张状态。</li>
+                            <li><strong>拆牌技巧：</strong> 如果手中有顺子，尽量拆成小顺子来干扰对手的接龙路线。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类玩法 -->
+        <section id="categories" class="container">
+            <h2 class="section-title">多样化玩法分类</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary);">除了传统纸牌，还有多种形式的“开火车”体验</p>
+            <div class="category-grid">
+                <div class="cat-item">
+                    <span class="cat-icon">🃏</span>
+                    <div class="cat-name">传统接龙</div>
+                    <div style="font-size: 0.85rem; color: #666;">经典扑克玩法，考验手速与记忆力</div>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🎲</span>
+                    <div class="cat-name">骰子火车</div>
+                    <div style="font-size: 0.85rem; color: #666;">使用骰子进行点数比拼的休闲游戏</div>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">📱</span>
+                    <div class="cat-name">手机App</div>
+                    <div style="font-size: 0.85rem; color: #666;">随时随地在线对战，匹配全球玩家</div>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🧠</span>
+                    <div class="cat-name">数字记忆</div>
+                    <div style="font-size: 0.85rem; color: #666;">纯数字逻辑推理，适合脑力训练</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">“开火车”和“接龙”有什么区别？</div>
+                    <div class="faq-answer">
+                        <p>两者本质相似，核心都是“比大小”或“接龙”。但在某些规则中，“开火车”更强调“炸弹”和“同花顺”的压制力，且通常用于多人聚会；“接龙”有时特指单人纸牌游戏的玩法。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">一个人玩怎么玩？</div>
+                    <div class="faq-answer">
+                        <p>单人玩法通常被称为“纸牌接龙”或“纸牌开火车”。你需要将牌按花色分类，并按照数字顺序移动到右边的空位中。这主要是一种单人益智游戏，而非对抗性游戏。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">新手入门有什么建议？</div>
+                    <div class="faq-answer">
+                        <p>新手建议先从“不出牌”开始，观察老手的出牌逻辑。记住不要轻易打出自己的炸弹，除非是为了终结游戏。学会“挂火车”也是一种战术。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于开火车游戏</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">致力于推广经典的聚会益智游戏文化，提供最全的游戏规则解析与策略分享。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#rules">游戏规则</a></li>
+                        <li><a href="#tips">策略指南</a></li>
+                        <li><a href="#categories">分类玩法</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">纸牌购买指南</a></li>
+                        <li><a href="#">聚会游戏推荐</a></li>
+                        <li><a href="#">游戏开发工具</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 开火车游戏指南. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
