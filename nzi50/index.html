@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="女子500米短道速滑专题页，提供国际滑联ISU规则解析、奥运历史冠军名单、世界锦标赛成绩榜单及专业训练技巧与装备指南。">
+    <meta name="keywords" content="女子500米短道速滑,短道速滑,短道速滑500米,奥运会短道速滑,速滑技巧,速滑装备">
+    <title>女子500米短道速滑-奥运竞技与专业训练指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #004aad;
+            --accent-color: #ffcc00;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-radius: 12px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(0, 74, 173, 0.9), rgba(15, 23, 42, 0.8)), 
+                        url('https://picsum.photos/seed/skating/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            background: var(--card-bg);
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        /* Featured Athletes */
+        .athlete-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .athlete-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .athlete-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .athlete-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #334155;
+        }
+
+        .athlete-info {
+            padding: 1rem;
+        }
+
+        .athlete-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .athlete-nation {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .athlete-record {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Rules & Guide */
+        .guide-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .guide-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .guide-icon {
+            font-size: 1.5rem;
+            background: rgba(255, 204, 0, 0.1);
+            color: var(--accent-color);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Sidebar */
+        aside .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .ranking-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .ranking-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-weight: bold;
+            color: var(--accent-color);
+            width: 25px;
+        }
+
+        /* Equipment Guide */
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gear-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .gear-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1120;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+                <span>速滑视界</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#history">历史沿革</a></li>
+                    <li><a href="#rules">竞赛规则</a></li>
+                    <li><a href="#athletes">名将风采</a></li>
+                    <li><a href="#guide">训练装备</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>女子500米短道速滑</h1>
+                <p>极速与激情的完美结合，在短短一圈半的赛道上，展现人类速度的极限。从冬奥赛场到专业训练场，全方位解析女子500米速滑的魅力。</p>
+                <div>
+                    <a href="#rules" class="btn">了解规则</a>
+                    <a href="#athletes" class="btn btn-outline">查看榜单</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="container">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h3>500米</h3>
+                    <p>单圈距离</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2圈</h3>
+                    <p>实际滑行圈数</p>
+                </div>
+                <div class="stat-item">
+                    <h3>40.32秒</h3>
+                    <p>世界纪录(2024)</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>冬奥会参赛名额</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container content-grid">
+            <!-- Left Column -->
+            <div class="main-column">
+                
+                <!-- Rules Section -->
+                <section id="rules">
+                    <div class="section-header">
+                        <h2 class="section-title">竞赛规则与战术解析</h2>
+                    </div>
+                    <div class="guide-list">
+                        <div class="guide-item">
+                            <div class="guide-icon">⚡</div>
+                            <div>
+                                <h3>起跑与抢跑</h3>
+                                <p>女子500米是短道速滑中节奏变化最快的项目。起跑反应时间至关重要，抢跑（犯规）将直接导致被取消资格。选手通常采用半蹲式起跑，以获得最大的爆发力。</p>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-icon">🔄</div>
+                            <div>
+                                <h3>弯道超越技巧</h3>
+                                <p>在500米比赛中，弯道是超越的最佳时机。选手通过降低重心、增大身体倾斜角度以及利用内道优势进行切入，在入弯时寻找超车机会，出弯时直线加速拉开差距。</p>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-icon">🛡️</div>
+                            <div>
+                                <h3>犯规与处罚</h3>
+                                <p>由于赛道狭窄，身体接触频繁。常见的犯规包括：推人、阻挡、切入时未让路以及干扰他人滑行路线。一旦被裁判组判定犯规，该选手将被罚下，通常影响整场比赛的名次。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Athletes Section -->
+                <section id="athletes">
+                    <div class="section-header">
+                        <h2 class="section-title">顶尖选手与历史战绩</h2>
+                        <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看完整榜单 &rarr;</a>
+                    </div>
+                    <div class="athlete-grid">
+                        <article class="athlete-card">
+                            <img src="https://picsum.photos/seed/athlete1/300/400" alt="韩国选手" class="athlete-img">
+                            <div class="athlete-info">
+                                <h3 class="athlete-name">崔敏静</h3>
+                                <p class="athlete-nation">🇰🇷 韩国</p>
+                                <p class="athlete-record">奥运金牌 | 500米世界纪录保持者</p>
+                            </div>
+                        </article>
+                        <article class="athlete-card">
+                            <img src="https://picsum.photos/seed/athlete2/300/400" alt="荷兰选手" class="athlete-img">
+                            <div class="athlete-info">
+                                <h3 class="athlete-name">舒尔廷</h3>
+                                <p class="athlete-nation">🇳🇱 荷兰</p>
+                                <p class="athlete-record">奥运冠军 | 世锦赛常胜将军</p>
+                            </div>
+                        </article>
+                        <article class="athlete-card">
+                            <img src="https://picsum.photos/seed/athlete3/300/400" alt="加拿大选手" class="athlete-img">
+                            <div class="athlete-info">
+                                <h3 class="athlete-name">弗洛伦</h3>
+                                <p class="athlete-nation">🇨🇦 加拿大</p>
+                                <p class="athlete-record">奥运银牌 | 500米接力主力</p>
+                            </div>
+                        </article>
+                        <article class="athlete-card">
+                            <img src="https://picsum.photos/seed/athlete4/300/400" alt="中国选手" class="athlete-img">
+                            <div class="athlete-info">
+                                <h3 class="athlete-name">范可新</h3>
+                                <p class="athlete-nation">🇨🇳 中国</p>
+                                <p class="athlete-record">奥运冠军 | 中国队领军人物</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Equipment Guide -->
+                <section id="guide">
+                    <div class="section-header">
+                        <h2 class="section-title">专业装备与训练指南</h2>
+                    </div>
+                    <div class="gear-grid">
+                        <div class="gear-card">
+                            <img src="https://picsum.photos/seed/skates/400/300" alt="速滑冰刀" class="gear-img">
+                            <h3>短道专用冰刀</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.5rem;">刀身更长、弧度更大，以适应弯道滑行，提供更稳定的抓地力。</p>
+                        </div>
+                        <div class="gear-card">
+                            <img src="https://picsum.photos/seed/protective/400/300" alt="护具" class="gear-img">
+                            <h3>全身防护装备</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.5rem;">包括头盔、护臀、护肘和护膝。虽然重量会影响速度，但安全性是首要考虑。</p>
+                        </div>
+                        <div class="gear-card">
+                            <img src="https://picsum.photos/seed/gloves/400/300" alt="连指手套" class="gear-img">
+                            <h3>连指手套</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.5rem;">防滑、防烫伤。在起跑蹬冰和弯道身体接触时提供保护。</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column Sidebar -->
+            <aside class="sidebar">
+                <div class="card">
+                    <h3 class="sidebar-title">最新世界排名 (500米)</h3>
+                    <ul class="ranking-list">
+                        <li><span class="rank-num">1</span> <span>崔敏静 (韩国)</span> <span>42.63</span></li>
+                        <li><span class="rank-num">2</span> <span>舒尔廷 (荷兰)</span> <span>42.71</span></li>
+                        <li><span class="rank-num">3</span> <span>弗洛伦 (加拿大)</span> <span>42.88</span></li>
+                        <li><span class="rank-num">4</span> <span>范可新 (中国)</span> <span>43.02</span></li>
+                        <li><span class="rank-num">5</span> <span>李靳宇 (中国)</span> <span>43.15</span></li>
+                        <li><span class="rank-num">6</span> <span>博伊 (意大利)</span> <span>43.20</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="sidebar-title">快速链接</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="#">国际滑联 (ISU) 官方规则</a></li>
+                        <li><a href="#">冬奥会女子500米金牌榜</a></li>
+                        <li><a href="#">如何选购速滑冰刀</a></li>
+                        <li><a href="#">短道速滑损伤预防</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>速滑视界</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">致力于为短道速滑爱好者提供最权威的赛事资讯、技术分析和装备指南。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">国际滑联</a></li>
+                        <li><a href="#">中国滑冰协会</a></li>
+                        <li><a href="#">体育总局</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 速滑视界. All Rights Reserved. 本站内容仅供学习与参考，数据来源于公开资料。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
