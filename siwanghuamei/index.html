@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丝网花玫瑰花做法 - 详细教程与材料准备指南</title>
+    <meta name="description" content="本页提供专业的丝网花玫瑰花制作教程，包括详细步骤、所需材料清单、工具介绍及配色技巧。无论你是新手还是进阶爱好者，都能在这里找到从零开始制作逼真玫瑰花的实用指南。">
+    <meta name="keywords" content="丝网花玫瑰花做法, 玫瑰花手工制作, 丝网花教程, 手工花艺, DIY手工">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d6404d;
+            --secondary-color: #f7f1e8;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #fdfbf7;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #fff0f1 0%, #fff 100%);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 主要内容网格 */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* 移动端简化导航 */
+            }
+        }
+
+        /* 文章区域 */
+        .article-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .article-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .article-section h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .article-section p {
+            margin-bottom: 1rem;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+
+        .tips-box {
+            background: #fff8f9;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .tips-box strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* 侧边栏 */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .material-list {
+            list-style: none;
+        }
+
+        .material-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .material-list li:last-child {
+            border-bottom: none;
+        }
+
+        .material-name {
+            font-weight: 500;
+        }
+
+        .material-amount {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* 视觉展示区 */
+        .gallery-section {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            background-color: #eee;
+            box-shadow: var(--card-shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ 区域 */
+        .faq-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #333;
+            color: #ccc;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #b92b35;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    花艺工坊
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">全部教程</a></li>
+                    <li><a href="#">材料工具</a></li>
+                    <li><a href="#">社区交流</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+                <button class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">开始制作</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="hero">
+            <h1>丝网花玫瑰花做法</h1>
+            <p>学习如何用简单的丝网和铁丝，亲手制作一朵栩栩如生的玫瑰花。本教程涵盖从基础材料准备到花瓣塑形、花蕊组装的完整流程，适合手工初学者。</p>
+        </section>
+
+        <div class="main-grid">
+            <!-- 左侧：详细教程 -->
+            <article class="article-section">
+                <h2>制作流程详解</h2>
+                
+                <p>丝网花（Silk Flower）以其仿真度高、色彩鲜艳且不易凋谢而深受手工爱好者喜爱。制作一朵标准的玫瑰花主要分为四个阶段：基础骨架制作、花瓣塑形、花萼组装以及最后的整理。</p>
+
+                <h3>第一步：准备材料</h3>
+                <p>在开始之前，请确保准备好以下基础材料。不同种类的玫瑰对花瓣数量和大小有要求，这里以最常见的“标准玫瑰”为例。</p>
+                
+                <ul class="step-list">
+                    <li><strong>铁丝：</strong> 22# 或 24# 低碳钢丝，用于制作花茎和骨架。</li>
+                    <li><strong>绿色胶带：</strong> 专用的花艺胶带，用于缠绕铁丝并固定花瓣。</li>
+                    <li><strong>丝网：</strong> 红色或粉色（根据喜好），常用的有 15孔和 21孔规格。</li>
+                    <li><strong>花蕊：</strong> 黄色海绵芯或成品花蕊。</li>
+                    <li><strong>工具：</strong> 尖嘴钳、圆头钳、剪刀、镊子。</li>
+                </ul>
+
+                <div class="tips-box">
+                    <strong>新手提示：</strong> 铁丝越细，做出的花瓣越细腻，但越难操作。建议初学者使用 22# 铁丝。
+                </div>
+
+                <h3>第二步：制作花瓣骨架</h3>
+                <p>玫瑰花瓣通常采用“水滴状”或“椭圆状”的骨架。使用圆头钳将铁丝弯成所需的弧度。</p>
+                <p>1. <strong>单层花瓣：</strong> 将铁丝弯成水滴形，两端向内卷曲，形成自然的弧度。</p>
+                <p>2. <strong>双层花瓣：</strong> 在单层花瓣的基础上，再套一层丝网，形成更丰满的质感。注意丝网要拉紧，避免褶皱。</p>
+                <p>3. <strong>修剪：</strong> 使用剪刀将丝网多余的部分剪掉，留下约 1-2 毫米的余量，方便后续用胶带缠绕。</p>
+
+                <h3>第三步：缠绕与塑形</h3>
+                <p>这是最考验耐心的步骤。</p>
+                <p>1. 撕开一段绿色胶带，缠绕在铁丝根部，固定丝网。</p>
+                <p>2. 从根部开始向尖端缠绕，拉紧胶带，使花瓣表面平整光滑。</p>
+                <p>3. <strong>捏合：</strong> 使用圆头钳的尖端，轻轻捏住花瓣的边缘，使其产生自然的波浪边缘，模拟真实玫瑰的起伏。</p>
+
+                <h3>第四步：组装花型</h3>
+                <p>将制作好的花瓣按照大小顺序（从小到大）层层叠加。</p>
+                <ul class="step-list">
+                    <li>先在最顶端放几片最小的“花芯”花瓣。</li>
+                    <li>外围依次包裹较大的花瓣，注意角度要错开，不能重叠成一条直线。</li>
+                    <li>最后在最底部包裹最大的花瓣，并将其向内卷曲，形成花托。</li>
+                </ul>
+
+                <div class="tips-box">
+                    <strong>花萼制作：</strong> 绿色丝网剪成三角形，包裹在花茎底部，用胶带缠绕即可。
+                </div>
+
+            </article>
+
+            <!-- 右侧：侧边栏信息 -->
+            <aside>
+                <div class="sidebar-card">
+                    <h3>所需材料清单</h3>
+                    <ul class="material-list">
+                        <li><span class="material-name">22# 铁丝</span> <span class="material-amount">1.5米</span></li>
+                        <li><span class="material-name">红色丝网</span> <span class="material-amount">15孔 20x20cm</span></li>
+                        <li><span class="material-name">花蕊</span> <span class="material-amount">成品 1个</span></li>
+                        <li><span class="material-name">绿色胶带</span> <span class="material-amount">1卷</span></li>
+                        <li><span class="material-name">圆头钳</span> <span class="material-amount">1把</span></li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%; margin-top: 1rem;">下载材料清单</button>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">丝网花容易坏吗？</div>
+                        <div class="faq-answer">丝网花耐保存，只要不暴晒和过度潮湿，可以保存很长时间。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">新手推荐用什么颜色？</div>
+                        <div class="faq-answer">红色和粉色是最经典的玫瑰颜色，且丝网货源充足，容易买到。</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 视觉展示 -->
+        <section class="gallery-section">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-color);">制作效果展示</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/rose1/400/400" alt="成品玫瑰花特写">
+                    <div class="gallery-caption">成品特写</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/rose2/400/400" alt="花瓣细节">
+                    <div class="gallery-caption">花瓣细节</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/rose3/400/400" alt="花蕊组装">
+                    <div class="gallery-caption">花蕊组装</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/rose4/400/400" alt="花茎处理">
+                    <div class="gallery-caption">花茎处理</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 选购指南 -->
+        <section class="faq-section">
+            <h2>材料选购与注意事项</h2>
+            <article style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">如何选择丝网孔数？</h3>
+                <p>丝网的孔数（如15孔、21孔、24孔）决定了花瓣的细腻程度。15孔丝网纹理较粗，适合制作大花或初学者练习；21孔和24孔则更细腻，适合制作精致的小花。</p>
+            </article>
+            <article>
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">绿色胶带怎么用？</h3>
+                <p>使用时不要直接从卷上撕下来，而要用手指搓动胶带的一端，利用胶带自身的粘性慢慢拉出一条细长条。拉出后迅速缠绕在铁丝上，用力拉紧，这样胶带才会贴合紧密，不易脱落。</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>花艺工坊</h4>
+                    <p>致力于分享最实用的手工花艺教程，让每个人都能成为生活中的艺术家。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">丝网花制作</a></li>
+                        <li><a href="#">永生花教程</a></li>
+                        <li><a href="#">折纸花艺</a></li>
+                        <li><a href="#">布艺花制作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">投稿合作</a></li>
+                        <li><a href="#">问题反馈</a></li>
+                        <li><a href="#">加入会员</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 花艺工坊. 保留所有权利. 本网站内容仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
