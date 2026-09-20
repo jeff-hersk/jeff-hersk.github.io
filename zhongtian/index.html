@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中天集团官方网站 - 提供企业综合服务、房地产项目展示、工程建设案例及企业新闻资讯。致力于打造行业领先的专业服务平台。">
+    <meta name="keywords" content="中天,中天集团,中天建设,中天地产,中天官网,中天服务">
+    <title>中天集团 - 企业综合服务平台与项目展示</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --container-width: 1200px;
+            --header-height: 70px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            height: var(--header-height);
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: #004494;
+            border-color: #004494;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            margin-top: var(--header-height);
+            height: 500px;
+            background: linear-gradient(135deg, rgba(0,86,179,0.9), rgba(0,86,179,0.7)), url('https://picsum.photos/seed/construction/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-hero {
+            padding: 12px 30px;
+            font-size: 16px;
+        }
+
+        /* 核心业务板块 */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* 项目展示 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: var(--white);
+        }
+
+        .project-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .project-overlay p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* 数据统计 */
+        .stats {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* 关于我们 */
+        .about-section {
+            background: var(--secondary-color);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .header-actions .btn {
+                display: none;
+            }
+
+            .header-actions .btn-outline {
+                display: block;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                </svg>
+                <span>中天集团</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#services">业务范围</a></li>
+                    <li><a href="#projects">精品项目</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#news">新闻资讯</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">联系我们</a>
+                <a href="#" class="btn btn-primary">在线咨询</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 区域 -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>筑造美好未来，服务美好生活</h1>
+                    <p>中天集团致力于提供全方位的综合服务解决方案，涵盖工程建设、房地产开发、专业服务及企业运营支持。以专业、诚信、创新为核心理念，与您携手共创卓越。</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary btn-hero">查看项目</a>
+                        <a href="#services" class="btn btn-outline btn-hero" style="color: white; border-color: white;">了解服务</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心业务 -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心业务领域</h2>
+                    <p>深耕行业多年，构建多元化服务体系，满足不同客户需求</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>工程建设</h3>
+                        <p>提供从设计、施工到监理的全过程工程服务，确保项目高质量交付。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>房地产开发</h3>
+                        <p>专注于高品质住宅及商业地产开发，打造宜居宜业的优质空间。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💡</div>
+                        <h3>专业咨询</h3>
+                        <p>为企业提供战略规划、管理咨询及市场分析，助力商业决策。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤝</div>
+                        <h3>供应链服务</h3>
+                        <p>整合优质资源，提供高效的物流配送与供应链管理解决方案。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据统计 -->
+        <section class="stats">
+            <div class="container stats-container">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>年行业经验</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>成功案例</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>合作伙伴</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24h</h3>
+                    <p>响应服务</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精品项目 -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选项目展示</h2>
+                    <p>匠心独运，每一个项目都是对品质的承诺</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://picsum.photos/seed/arch1/600/450.jpg" alt="中天中心大厦">
+                        <div class="project-overlay">
+                            <h3>中天中心大厦</h3>
+                            <p>城市地标 / 商务办公</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://picsum.photos/seed/arch2/600/450.jpg" alt="中天·御景湾">
+                        <div class="project-overlay">
+                            <h3>中天·御景湾</h3>
+                            <p>高端住宅 / 滨海景观</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://picsum.photos/seed/arch3/600/450.jpg" alt="中天科技园">
+                        <div class="project-overlay">
+                            <h3>中天科技园</h3>
+                            <p>产业园区 / 创新孵化</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-outline">浏览更多项目</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>关于中天集团</h2>
+                        <p>中天集团成立于1998年，是一家集工程建设、房地产开发、专业服务及供应链管理于一体的综合性企业。多年来，我们始终秉承“诚信为本、质量第一”的经营理念，在激烈的市场竞争中稳步前行。</p>
+                        <p>我们拥有一支高素质的专业团队，具备丰富的行业经验和先进的管理体系。无论是大型基础设施建设，还是精细化的小型商业项目，中天集团都能提供量身定制的解决方案。</p>
+                        <a href="#" class="btn btn-primary">了解更多</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/office/600/400.jpg" alt="中天集团办公环境">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新闻资讯 -->
+        <section id="news" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>集团新闻</h2>
+                    <p>关注中天动态，了解行业前沿资讯</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <article style="border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                        <h3 style="margin-bottom: 10px;"><a href="#">中天集团荣获年度最佳企业服务奖</a></h3>
+                        <p style="color: #666; font-size: 14px; margin-bottom: 10px;">近日，在2023年度行业盛典中，中天集团凭借卓越的服务品质和创新模式，荣获“年度最佳企业服务奖”...</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 14px;">阅读更多 &rarr;</a>
+                    </article>
+                    <article style="border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                        <h3 style="margin-bottom: 10px;"><a href="#">中天科技园二期项目正式开工</a></h3>
+                        <p style="color: #666; font-size: 14px; margin-bottom: 10px;">为响应国家科技创新号召，中天科技园二期项目于今日举行隆重的开工仪式，预计将于2025年竣工...</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 14px;">阅读更多 &rarr;</a>
+                    </article>
+                    <article style="border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                        <h3 style="margin-bottom: 10px;"><a href="#">中天集团召开年度战略规划会议</a></h3>
+                        <p style="color: #666; font-size: 14px; margin-bottom: 10px;">集团高层齐聚一堂，共同探讨未来五年发展战略，确立了以数字化转型为核心的升级方向...</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 14px;">阅读更多 &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>中天集团</h4>
+                    <p>致力于成为行业内领先的综合服务商，以专业的技术和真诚的服务，为客户创造持续的价值。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速链接</h5>
+                    <ul>
+                        <li><a href="#">集团概况</a></li>
+                        <li><a href="#">组织架构</a></li>
+                        <li><a href="#">企业文化</a></li>
+                        <li><a href="#">招贤纳士</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>业务范围</h5>
+                    <ul>
+                        <li><a href="#">工程建设</a></li>
+                        <li><a href="#">房地产开发</a></li>
+                        <li><a href="#">专业咨询</a></li>
+                        <li><a href="#">供应链服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>联系我们</h5>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：contact@zhongtian.com</li>
+                        <li>地址：中国某市某区某大道888号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 中天集团 版权所有 | 隐私政策 | 网站地图</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
